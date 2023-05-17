@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Emblem Awekening Calculadora</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,900&family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400;1,900&display=swap" rel="stylesheet">
+    
+    <link href="./css/style.css" rel="stylesheet">
+
+    
+</head>
+<body>
+
+    <nav class="nav">
+        <h1><b>Fire Emblem Awekening</b><span>Calculadora de stats</span></h1>
+    </nav>
+    <div class="container">
+
+        
+        <div class="content">
+            <div class="flex">
+                <div id="statsName" class="stats-name">
+                    <div class="stat-bs">-</div>
+                    <div class="stat-bs">Hp</div>
+                    <div class="stat-bs">Str</div>
+                    <div class="stat-bs">Mag</div>
+                    <div class="stat-bs">Skl</div>
+                    <div class="stat-bs">Spd</div>
+                    <div class="stat-bs">Lck</div>
+                    <div class="stat-bs">Def</div>
+                    <div class="stat-bs">Res</div>
+                </div>
+                <div id="statsMostrar" class="stat-mostrar">
+                    <div class="nombreT">Stats Base</div>
+                    <div id="statHp"></div>
+                    <div id="statStr"></div>
+                    <div id="statMag"></div>
+                    <div id="statSkl"></div>
+                    <div id="statSpd"></div>
+                    <div id="statLck"></div>
+                    <div id="statDef"></div>
+                    <div id="statRes"></div>
+                </div>
+            </div>
+            <div class="flex">
+                <div id="statsMostrarGr" class="stat-mostrar">
+                    <div class="nombreT">Growth Rates</div>
+                    <div id="statHpGr"></div>
+                    <div id="statStrGr"></div>
+                    <div id="statMagGr"></div>
+                    <div id="statSklGr"></div>
+                    <div id="statSpdGr"></div>
+                    <div id="statLckGr"></div>
+                    <div id="statDefGr"></div>
+                    <div id="statResGr"></div>
+                </div>
+            </div>
+            <div class="opciones">
+                <div class="select-name">Asset</div>
+                <select id="assetSelect" class="asset-select"></select>
+                <div class="select-name">Flaw</div>
+                <select id="flawSelect" class="flaw-select"></select>
+            </div>
+        </div>
+        <br><br>
+        <div class="botones">
+            <button id="robinMujer">Mujer</button>
+            <button id="robinHombre">Hombre</button>
+
+            <div id="pjImagen" class="pj-imagen"></div>
+            
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js" integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="./js/robin.js"></script>
+    <script type="text/javascript" src="./js/unidades.js"></script>
+    <script type="text/javascript" src="./js/clases.js"></script>
+    <script type="text/javascript" src="./js/name.js"></script>
+    <script type="text/javascript" src="./js/generorb.js"></script>
+    
+</body>
+</html>

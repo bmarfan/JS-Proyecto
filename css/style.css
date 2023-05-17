@@ -1,0 +1,70 @@
+:root{
+    --fem-robin: url('https://cdn.fireemblemwiki.org/thumb/1/10/Portrait_my_unit_2_fe13.png/300px-Portrait_my_unit_2_fe13.png');
+    --male-robin: url('https://cdn.fireemblemwiki.org/thumb/9/9f/Portrait_my_unit_1_fe13.png/300px-Portrait_my_unit_1_fe13.png')
+}
+.closeup{display: none;}
+.femenino{
+    width: 300px;
+    height: 300px;
+    background: var(--fem-robin);
+}
+.masculino{
+    width: 300px;
+    height: 300px;
+    background: var(--male-robin);
+}
+.flex, .content{
+    display: flex;
+    justify-content: left;
+    align-items: start;
+}
+.stats-name{
+    width: 70px;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+.nav h1{
+    font-family: 'Montserrat', sans-serif;
+}
+.nav h1 span{
+    display: block;
+}
+.stats-name .stat-bs{
+    border-bottom: 1px solid #ddd;
+    margin: 1px;
+    padding: 5px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.stat-mostrar div{
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    margin: 1px;
+    width: 100px;
+    min-height: 15.2px;
+}
+
+.content{
+    font-size: 13px;
+}
+.opciones{
+    padding: 0 40px;
+    width: 150px;
+}
+.select-name{
+    font-weight: 700;
+    padding: 5px 0;
+}
+.opciones select{
+    width: 150px;
+    margin-top: -2px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 3px;
+    border: 1px solid #ddd;
+}
+.nombreT{
+    font-weight: 700;
+}
