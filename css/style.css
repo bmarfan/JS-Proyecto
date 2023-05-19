@@ -1,6 +1,5 @@
 :root{
-    --fem-robin: url('https://cdn.fireemblemwiki.org/thumb/1/10/Portrait_my_unit_2_fe13.png/300px-Portrait_my_unit_2_fe13.png');
-    --male-robin: url('https://cdn.fireemblemwiki.org/thumb/9/9f/Portrait_my_unit_1_fe13.png/300px-Portrait_my_unit_1_fe13.png')
+    --color: #b185db;
 }
 .closeup{display: none;}
 .femenino{
@@ -18,6 +17,11 @@
     justify-content: left;
     align-items: start;
 }
+.flex{
+   position: relative;
+   top: 50px;
+   left: 60px;
+}
 .stats-name{
     width: 70px;
 }
@@ -26,9 +30,20 @@ body{
 }
 .nav h1{
     font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    padding: 10px;
 }
 .nav h1 span{
     display: block;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    text-align: right;
+    
 }
 .stats-name .stat-bs{
     border-bottom: 1px solid #ddd;
@@ -48,6 +63,12 @@ body{
 
 .content{
     font-size: 13px;
+    position: relative;
+    margin-left: 400px;
+    border: 1px solid #ddd;
+    width: 60%;
+    height: 50vh;
+    margin-top: 130px;
 }
 .opciones{
     padding: 0 40px;
@@ -67,4 +88,50 @@ body{
 }
 .nombreT{
     font-weight: 700;
+}
+button{
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin: 5px auto;
+    width: 150px;
+    text-transform: uppercase;
+    font-size: 10px;
+    background: #333;
+    color: #fff;
+
+}
+
+/*sidebar*/
+.sidebar{
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    border: 1px solid #ddd;
+    top: 0;
+    left: 0;
+    background: #fff;
+    font-size: 13px;
+    z-index: 99;
+}
+.sidebar h3{
+    padding: 10px
+}
+
+.ficha{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 150px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+.ficha h3{
+    padding: 0 20px;
+}
+.abajo{
+    position: relative;
+    right: 300px;
+    top: -50px
 }

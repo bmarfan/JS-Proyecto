@@ -2,6 +2,7 @@
 "use strict";
 window.addEventListener('load', function (){
     selecOptions();
+    guardarStorage();
 })
 
 //poner los selects
@@ -9,9 +10,26 @@ function selecOptions(){
     //poner las opciones de Asset y Flaw
     selectAssetFlaw();
     cambiarTexto();
+    robinGender();
     $("#assetSelect").change(modAssetFlaw);
     $("#flawSelect").change(modAssetFlaw);
+
 }
+function guardarStorage(){
+    guardarA();
+    guardarG();
+    guardarF();
+    guardarJSON();
+}
+
+// elegir el género de Robin
+function robinGender(){
+    for(var i = 0; i < robinFM.length; i++){
+        var gn = robinFM[i].gender;
+        $("#genderSelect").append($("<option></option>").val(gn).text(gn).attr("data-optNo", i));
+    }
+}
+
 
 //array de los stats
 var statsArray = ["Hp", "Str", "Mag", "Skl", "Spd", "Lck", "Def", "Res"];
@@ -27,12 +45,12 @@ function modAssetFlaw (){
     var baseGrArray = growthBaseArray(robin);
     
     for(var i = 0; i < statsArray.length; i++){
-        statModUp(statsArray[i], (assetModArray[i] + flawModArray[i] + baseModArray[i]), robin);
-        statGrUp(statsArray[i], (assetGrArray[i] + flawGrArray[i] + baseGrArray[i]), robin);
-    };
+         statModUp(statsArray[i], (assetModArray[i] + flawModArray[i] + baseModArray[i]), robin);
+         statGrUp(statsArray[i], (assetGrArray[i] + flawGrArray[i] + baseGrArray[i]), robin);
+    }
     cambiarTexto();
-
 }
+
 
 //que devuelva el asset
 function getAsset(){
@@ -81,8 +99,6 @@ function cambiarTexto(){
         $("#stat" + statsArray[i] + "Gr").empty().text(stGrBase[i])
     }
 }
-
-
 //dar mod, val, unit STAT BASE
 function statModUp(mod, val, unit){
     if(mod === "Hp"){
@@ -138,3 +154,4 @@ function statGrUp(gr, val, unit){
         unit.resGr = val;
     }
 }
+

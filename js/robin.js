@@ -348,6 +348,12 @@ var noneAF = {
     resGr: 0,
 }
 
+//generos
+var robinFM = [
+    {id: "-", gender: "-"},
+    {id: "F", gender: "Femenino"},
+    {id: "M", gender: "Masculino"}
+]
 
 //hacer arrays que junten todos
 var assetArray = [noneAF, hpAsset, strAsset, magAsset, sklAsset, spdAsset, lckAsset, defAsset, resAsset];

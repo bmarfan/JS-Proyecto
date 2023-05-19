@@ -21,8 +21,23 @@
     </nav>
     <div class="container">
 
-        
+        <div class="sidebar">
+            <h3>Unidades</h3>
+            <button id="unidad1">Robin</button>
+            <button id="unidad2">Unidad</button>
+        </div>
         <div class="content">
+            <div class="datos">
+                <div class="unit-name" id="unitName">Robin</div>
+                <div class="opciones">
+                    <div class="select-name">Asset</div>
+                    <select id="assetSelect" class="select"></select>
+                    <div class="select-name">Flaw</div>
+                    <select id="flawSelect" class="select"></select>
+                    <div class="select-name">Género</div>
+                    <select id="genderSelect" class="select"></select>
+                </div>
+            </div>
             <div class="flex">
                 <div id="statsName" class="stats-name">
                     <div class="stat-bs">-</div>
@@ -60,20 +75,18 @@
                     <div id="statResGr"></div>
                 </div>
             </div>
-            <div class="opciones">
-                <div class="select-name">Asset</div>
-                <select id="assetSelect" class="asset-select"></select>
-                <div class="select-name">Flaw</div>
-                <select id="flawSelect" class="flaw-select"></select>
-            </div>
+            
         </div>
-        <br><br>
-        <div class="botones">
-            <button id="robinMujer">Opción 1</button>
-            <button id="robinHombre">Opción 2</button>
-
-            <div id="pjImagen" class="pj-imagen"></div>
-
+        <div class="ficha">
+            <h3>Recuento de unidades</h3>
+            <button id="actulizar">Actualizar lista</button>
+            <div class="abajo">
+                <div id="unidadesActNombre"></div>
+                <div id="unidadesActdat"></div>
+                <div id="unidadesActdat2"></div>
+                <div id="unidadesActdat3"></div>
+                <div id="unidadesActdat4"></div>
+            </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js" integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -83,6 +96,7 @@
     <script type="text/javascript" src="./js/clases.js"></script>
     <script type="text/javascript" src="./js/name.js"></script>
     <script type="text/javascript" src="./js/generorb.js"></script>
+    <script type="text/javascript" src="./js/storage.js"></script>
     
 </body>
 </html>
