@@ -3,6 +3,7 @@
 window.addEventListener('load', function (){
     selecOptions();
     guardarStorage();
+    unitsAll();
 })
 
 //poner los selects
@@ -20,6 +21,11 @@ function guardarStorage(){
     guardarG();
     guardarF();
     guardarJSON();
+}
+
+function unitsAll(){
+    showUnits();
+    showTabs();
 }
 
 // elegir el género de Robin
@@ -77,7 +83,6 @@ function getFlaw(){
 }
 
 //SELECT de los Assets/Flaws
-
 function selectAssetFlaw(){
     for(var i = 0; i < assetArray.length; i++){
         var asset = assetArray[i].textVal;
@@ -86,6 +91,34 @@ function selectAssetFlaw(){
         $('#flawSelect').append($("<option></option>").val(flaw).text(flaw).attr("data-optNo", i));
     }
 }
+
+
+//hacer las opciones de las unidades
+function showUnits(){
+    
+    for(var i = 0; i < allUnits.length; i++){
+        var unitName = allUnits[i].nombre;
+        $('#unitsOpciones').append($("<button id='button" + unitName +"' class='contentButton'> "+ unitName +" </button>"));
+        $('#contentTabs').append($("<div id='tab" + unitName +"' class='contentTab'></div>"));
+        
+
+    }   
+ }
+function showTabs(){
+    for(var i = 0; i < allUnits.length; i++){
+        let unitName = allUnits[i].nombre;
+        $("#button" + unitName +"").on('click', function(){
+            if( $(".content-tabs div").hasClass('visible')){
+                $(".content-tabs div").removeClass('visible')
+            };
+        });
+         $("#button" + unitName +"").on('click', function(event){
+            event.preventDefault();
+            $("#tab" + unitName +"").toggleClass('visible');
+        });
+    }
+}
+
 
 //poner la info en la página
 function cambiarTexto(){

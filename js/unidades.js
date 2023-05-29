@@ -428,7 +428,7 @@ var donnel = {
     baseResGr: 15,
 }
 var lonqu = {
-    nombre: "Lon'qu",
+    nombre: "Lonqu",
     claseBase: ["Myrmidion", "Thief", "Wyvern Rider"],
     sRank: ["Robin", "Lissa", "Sully", "Miriel", "Maribelle", "Panne", "Cordelia", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Vaike", "Gregor"],
@@ -867,6 +867,9 @@ var henry = {
     baseResGr: 20,
 }
 
+
+//arrays de unidades
+var allUnits = [robin, chrom, lissa, frederick, sully, virion, stahl, vaike, miriel, sumia, kellam, lonqu, donnel, ricken, maribelle, panne, gaius, cordelia, gregor, nowi, anna, libra, tharja, olivia, cherche, henry]
 
 //hacer array de los stats
 function statBaseArray(unit){

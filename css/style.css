@@ -57,29 +57,29 @@ body{
     padding: 5px;
     border-bottom: 1px solid #ddd;
     margin: 1px;
-    width: 100px;
+    width: 8z0px;
     min-height: 15.2px;
 }
 
 .content{
     font-size: 13px;
-    position: relative;
-    margin-left: 400px;
     border: 1px solid #ddd;
-    width: 60%;
+    width: 500px;
     height: 50vh;
     margin-top: 130px;
+    position: absolute;
+    right: 40px;
 }
 .opciones{
     padding: 0 40px;
-    width: 150px;
+    width: 50px;
 }
 .select-name{
     font-weight: 700;
     padding: 5px 0;
 }
 .opciones select{
-    width: 150px;
+    width: 100px;
     margin-top: -2px;
     margin-bottom: 5px;
     border-radius: 5px;
@@ -105,7 +105,7 @@ button{
 /*sidebar*/
 .sidebar{
     position: fixed;
-    width: 200px;
+    width: 250px;
     height: 100vh;
     border: 1px solid #ddd;
     top: 0;
@@ -139,4 +139,30 @@ button{
 .unit-name{
     padding: 10px;
     font-size: 15px;
+}
+
+
+/*SIDEBAR*/
+.units-options button{
+    margin: 0 auto;
+    width: 100px;
+    position: relative;
+    left: 10%;
+}
+.nomostrar{
+    display: none;
+}
+.mostrar{
+    display: block;
+}
+.contentTab{
+    background-color: red;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    left: 300px;
+    display: none;
+}
+.visible{
+    display: block!important;
 }
