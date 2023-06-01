@@ -1,5 +1,6 @@
 var robin = {
     nombre: "Robin",
+    vName: "robin",
     claseBase: ["Tactician"],
     sRank: ["Chrom", "Frederick", "Virion", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gaius", "Gregor", "Libra", "Henry"],
     aRank: ["Lissa", "Sully", "Miriel", "Sumia", "Maribelle", "Panne", "Cordelia", "Nowi", "Tharja", "Olivia", "Cherche", "Anna"],
@@ -41,6 +42,7 @@ var robin = {
 
 var chrom = {
     nombre: "Chrom",
+    vName: "chrom",
     claseBase: ["Lord", "Cavalier", "Archer"],
     sRank: ["Robin", "Sumia", "Maribelle", "Sully", "Olivia"],
     aRank: ["Vaike", "Gaius", "Lissa", "Frederick"],
@@ -62,7 +64,6 @@ var chrom = {
     lckMod: 5,
     defMod: 7,
     resMod: 1,
-    
     baseHpGr: 45,
     baseStrGr: 40,
     baseMagGr: 10,
@@ -82,6 +83,7 @@ var chrom = {
 }
 var lissa = {
     nombre: "Lissa",
+    vName: "lissa",
     claseBase: ["Cleric", "Pegasus Knight", "Troubadour"],
     sRank: ["Virion", "Frederick", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gaius", "Gregor", "Henry", "Donnel"],
     aRank: ["Robin", "Chrom", "Maribelle"],
@@ -123,6 +125,7 @@ var lissa = {
 }
 var frederick = {
     nombre: "Frederick",
+    vName: "frederick",
     claseBase: ["Cavalier", "Knight", "Wyvern Rider"],   
     sRank: ["Cordelia", "Sumia", "Robin", "Lissa", "Sully", "Miriel", "Marielle", "Panne", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Chrom", "Virion", "Henry"],
@@ -163,6 +166,7 @@ var frederick = {
 }
 var sully = {
     nombre: "Sully",
+    vName: "sully",
     claseBase: ["Cavalier", "Myrmidion", "Wyvern Rider"],
     sRank: ["Gaius", "Donnel", "Chrom", "Frederick", "Virion", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gregor", "Libra", "Henry"],
     aRank: ["Robin", "Miriel", "Sumia"],
@@ -205,6 +209,7 @@ var sully = {
 //solo tiene baseGR
 var virion = {
     nombre: "Virion",
+    vName: "virion",
     claseBase: ["Archer", "Wyvern Rider", "Mage"],
     sRank: ["Tharja", "Lissa", "Panne", "Cordelia", "Robin", "Sully", "Miriel", "Maribelle", "Nowi", "Olivia", "Cherche"],
     aRank: ["Frederick", "Libra"],
@@ -237,6 +242,7 @@ var virion = {
 }
 var stahl = {
     nombre: "Stahl",
+    vName: "stahl",
     claseBase: ["Cavalier", "Archer", "Myrmidion"],
     sRank: ["Robin", "Cordelia", "Lissa", "Sully", "Miriel", "Maribelle", "Panne", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Kellam", "Donnel"],
@@ -269,6 +275,7 @@ var stahl = {
 }
 var vaike = {
     nombre: "Vaike",
+    vName: "vaike",
     claseBase: ["Barbarian", "Fighter", "Thief"],
     sRank: ["Robin", "Maribelle", "Olivia", "Lissa", "Miriel", "Sully", "Panne", "Cordelia", "Nowi", "Tharja", "Cherche"],
     aRank: ["Chrom", "Lon'qu"],
@@ -301,6 +308,7 @@ var vaike = {
 }
 var miriel = {
     nombre: "Miriel",
+    vName: "miriel",
     claseBase: ["Mage", "Dark Mage", "Troubadour"],
     sRank: ["Frederick", "Virion", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gaius", "Gregor", "Libra", "Henry"],
     aRank: ["Robin", "Sully", "Cherche"],
@@ -333,6 +341,7 @@ var miriel = {
 }
 var sumia = {
     nombre: "Sumia",
+    vName: "sumia",
     claseBase: ["Pegasus Knight", "Knight", "Cleric"],
     sRank: ["Chrom", "Frederick", "Gaius", "Henry"],
     aRank: ["Robin", "Cordelia", "Sully"],
@@ -365,6 +374,7 @@ var sumia = {
 }
 var kellam = {
     nombre: "Kellam",
+    vName: "kellam",
     claseBase: ["Knight", "Thief", "Priest"],
     sRank: ["Robin", "Lissa", "Sully", "Miriel", "Maribelle", "Panne", "Cordelia", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Stahl", "Donnel"],
@@ -397,6 +407,7 @@ var kellam = {
 }
 var donnel = {
     nombre: "Donnel",
+    vName: "donnel",
     claseBase: ["Villager", "Fighter", "Mercenary"],
     sRank: ["Robin", "Lissa", "Sully", "Miriel", "Maribelle", "Panne", "Cordelia", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Kellam", "Stahl"],
@@ -429,6 +440,7 @@ var donnel = {
 }
 var lonqu = {
     nombre: "Lonqu",
+    vName: "lonqu",
     claseBase: ["Myrmidion", "Thief", "Wyvern Rider"],
     sRank: ["Robin", "Lissa", "Sully", "Miriel", "Maribelle", "Panne", "Cordelia", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Vaike", "Gregor"],
@@ -461,6 +473,7 @@ var lonqu = {
 }
 var ricken = {
     nombre: "Ricken",
+    vName: "ricken",
     claseBase: ["Cavalier", "Archer", "Mage"],
     sRank: ["Robin", "Lissa", "Sully", "Miriel", "Maribelle", "Panne", "Cordelia", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Gregor", "Henry"],
@@ -485,6 +498,7 @@ var ricken = {
 }
 var maribelle = {
     nombre: "Maribelle",
+    vName: "maribelle",
     claseBase: ["Troubadour", "Pegasus Knight", "Mage"],
     sRank: ["Chrom", "Frederick", "Virion", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gaius", "Gregor", "Libra", "Henry"],
     aRank: ["Robin", "Lissa", "Olivia"],
@@ -517,6 +531,7 @@ var maribelle = {
 }
 var panne = {
     nombre: "Panne",
+    vName: "panne",
     claseBase: ["Taguel", "Thief", "Wyvern Rider"],
     sRank: ["Frederick", "Virion", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gaius", "Gregor", "Libra", "Henry"],
     aRank: ["Robin", "Cordelia", "Olivia"],
@@ -549,6 +564,7 @@ var panne = {
 }
 var gaius = {
     nombre: "Gaius",
+    vName: "gaius",
     claseBase: ["Thief", "Myrmidion", "Fighter"],
     sRank: ["Robin", "Lissa", "Sully", "Miriel", "Sumia", "Maribelle", "Panne", "Cordelia", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Chrom", "Libra"],
@@ -581,6 +597,7 @@ var gaius = {
 }
 var cordelia = {
     nombre: "Cordelia",
+    vName: "cordelia",
     claseBase: ["Pegasus Knight", "Mercenary", "Dark Mage"],
     sRank: ["Frederick", "Virion", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gaius", "Gregor", "Libra", "Henry"],
     aRank: ["Robin", "Sumia", "Panne"],
@@ -613,6 +630,7 @@ var cordelia = {
 }
 var gregor = {
     nombre: "Gregor",
+    vName: "gregor",
     claseBase: ["Mercenary", "Barbarian", "Myrmidion"],
     sRank: ["Robin", "Lissa", "Sully", "Miriel", "Maribelle", "Panne", "Cordelia", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Lon'qu", "Ricken"],
@@ -645,6 +663,7 @@ var gregor = {
 }
 var nowi = {
     nombre: "Nowi",
+    vName: "nowi",
     claseBase: ["Manekete", "Wyvern Rider", "Mage"],
     sRank: ["Frederick", "Virion", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gaius", "Gregor", "Libra", "Henry"],
     aRank: ["Robin", "Tharja", "Cherche"],
@@ -677,6 +696,7 @@ var nowi = {
 }
 var libra = {
     nombre: "Libra",
+    vName: "libra",
     claseBase: ["Priest", "Mage", "Dark Mage"],
     sRank: ["Robin", "Lissa", "Sully", "Miriel", "Maribelle", "Panne", "Cordelia", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Virion", "Gaius"],
@@ -709,6 +729,7 @@ var libra = {
 }
 var tharja = {
     nombre: "Tharja",
+    vName: "tharja",
     claseBase: ["Dark Mage", "Archer", "Knight"],
     sRank: ["Frederick", "Virion", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gaius", "Gregor", "Libra", "Henry"],
     aRank: ["Robin", "Nowi"],
@@ -741,6 +762,7 @@ var tharja = {
 }
 var anna = {
     nombre: "Anna",
+    vName: "anna",
     claseBase: ["Thief", "Archer", "Mage"],
     aRank: ["Robin", "Tiki"],
     isChilde: false,
@@ -772,6 +794,7 @@ var anna = {
 }
 var olivia = {
     nombre: "Olivia",
+    vName: "olivia",
     claseBase: ["Dancer", "Pegasus Knight"],
     sRank: ["Chrom", "Frederick", "Virion", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gaius", "Gregor", "Libra", "Henry"],
     aRank: ["Robin", "Maribelle", "Panne"],
@@ -804,6 +827,7 @@ var olivia = {
 }
 var cherche = {
     nombre: "Cherche",
+    vName: "cherche",
     claseBase: ["Wyvern Rider", "Trobaudour", "cleric"],
     sRank: ["Frederick", "Virion", "Vaike", "Stahl", "Kellam", "Lon'qu", "Ricken", "Gaius", "Gregor", "Libra", "Henry"],
     aRank: ["Robin", "Miriel", "Nowi"],
@@ -836,6 +860,7 @@ var cherche = {
 }
 var henry = {
     nombre: "Henry",
+    vName: "henry",
     claseBase: ["Dark Mage", "Barbarian", "Thief"],
     sRank: ["Robin", "Lissa", "Sully", "Miriel", "Sumia", "Maribelle", "Panne", "Cordelia", "Nowi", "Tharja", "Olivia", "Cherche"],
     aRank: ["Frederick", "Ricken"],
@@ -865,6 +890,40 @@ var henry = {
     baseLckGr: 40,
     baseDefGr: 40,
     baseResGr: 20,
+}
+
+var noUnit = {
+    nombre: "-",
+    vName: "-",
+    claseBase: ["-"],
+    sRank: [],
+    aRank: [],
+    isChilde: false,
+    gender: "N",
+    baseHp: 0,
+    baseStr: 0,
+    baseMag: 0,
+    baseSkl: 0,
+    baseSpd: 0,
+    baseLck: 0,
+    baseDef: 0,
+    baseRes: 0,
+    hpMod: 0,
+    strMod: 0,
+    magMod: 0,
+    sklMod: 0,
+    spdMod: 0,
+    lckMod: 0,
+    defMod: 0,
+    resMod: 0,
+    baseHpGr: 0,
+    baseStrGr: 0,
+    baseMagGr: 0,
+    baseSklGr: 0,
+    baseSpdGr: 0,
+    baseLckGr: 0,
+    baseDefGr: 0,
+    baseResGr: 0,
 }
 
 

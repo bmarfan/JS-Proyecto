@@ -522,8 +522,8 @@ var bowKnight = {
     baseDefGr: 5,
     baseResGr: 5,
 }
-var assasin = {
-    nombre: "Assasin",
+var assassin = {
+    nombre: "Assassin",
     weapon: ["sword", "bow"],
     baseHp: 21,
     baseStr: 8,
@@ -885,9 +885,17 @@ var dreadFighter = {
 }
 
 //
-var promotedClasses = [grandmaster, darkFlier, sorcerer, bride, falconKnight];
-var nopromotedClasses = [tactician, pegasusKnight, thief];
+
+var nopromotedClasses = [lord, tactician, cavalier, knight, myrmidion, mercenary, fighter, barbarian, archer, thief, pegasusKnight, wyvernRider, mage, darkMage, priest, cleric, troubadour, villager, dancer, taguelF, taguelM, manakete, bride, dreadFighter];
+var allClasses = [lord, greatLord, tactician, grandmaster, cavalier, paladin, greatKnight, knight, general, myrmidion, swordmaster, mercenary, hero, fighter, warrior, barbarian, berserker, archer, sniper, bowKnight, thief, assassin, trickster, pegasusKnight, falconKnight, darkFlier, wyvernRider, wyvernLord, griffonRider, mage, darkMage, sage, sorcerer, darkKnight, priest, cleric, warCleric, warMonk, troubadour, valkyrie, dancer, villager, taguelF, taguelM, manakete, bride, dreadFighter];
+var allRobinCl = [tactician, grandmaster, cavalier, paladin, greatKnight, knight, general, myrmidion, swordmaster, mercenary, hero, archer, sniper, bowKnight, thief, assassin, trickster, pegasusKnight, falconKnight, darkFlier, wyvernRider, wyvernLord, griffonRider, mage, darkMage, sage, sorcerer, darkKnight, cleric, warCleric, troubadour, valkyrie, bride];
+var onlyClF = [cleric, warCleric, troubadour, valkyrie, bride, dancer];
+var onlyClM = [fighter, barbarian, warrior, berserker, dreadFighter, villager];
+var specialClass = [lord, greatLord, tactician, grandmaster, villager, dancer, taguelM, taguelF, manakete];
 
 function getModArr(cl){
-    return [cl.hpMod, cl.strMod, cl.magMod, cl.sklMod, cl.spdMod, cl.lckMod, cl.defMod, cl.resMod];
+    return [cl.baseHp, cl.baseStr, cl.baseMag, cl.baseSkl, cl.baseSpd, cl.baseLck, cl.baseDef, cl.baseRes];
+}
+function getGrArrC(cl){
+    return [cl.baseHpGr, cl.baseStrGr, cl.baseMagGr, cl.baseSklGr, cl.baseSpdGr, cl.baseLckGr, cl.baseDefGr, cl.baseResGr];
 }

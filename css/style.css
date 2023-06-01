@@ -156,12 +156,16 @@ button{
     display: block;
 }
 .contentTab{
-    background-color: red;
-    width: 400px;
+    border: 1px solid #ddd;
+    width: 600px;
     height: 400px;
     position: relative;
     left: 300px;
     display: none;
+    top: 110px;
+}
+.default{
+    display: block;
 }
 .visible{
     display: block!important;
