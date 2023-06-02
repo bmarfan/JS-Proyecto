@@ -1,12 +1,13 @@
 //cuando el documento cargue
 "use strict";
-window.addEventListener('load', function (){
+
+$(function() {
     selecOptions();
     guardarStorage();
     unitsAll();
     getInfo();
-})
-
+    $("#tabRobin").toggleClass('visible');
+});
 //poner los selects
 function selecOptions(){
     //poner las opciones de Asset y Flaw
@@ -34,14 +35,26 @@ function getInfo(){
     $(".type").each(function() { //por cada opción
         var unit = getUnitO($(this).data("unit"));
         //crea el option
-        $(this).append($("<option></option>").val("base").text("Stats Base Individuales"));
-        $(this).append($("<option></option>").val("efBase").text("Stas Base Efectivos"));
-        $(this).append($("<option></option>").val("indgrs").text("Groth Rates Individuales"));
+        $(this).append($("<option></option>").val("base").text("Stats Base"));
+        $(this).append($("<option></option>").val("indgrs").text("Growth Rates Individuales"));
         $(this).append($("<option></option>").val("gr").text("Growth Rates Efectivoss"));
         $(this).change(function(){
             updateInfo(unit);
         })
     })
+    $(".cl").each(function(){
+        var unit = getUnitO($(this).data("unit"));
+        if(unit == robin){
+            robinClasses(unit);
+        }
+        else{
+            setClase(unit);
+        };
+        updateInfo(unit);
+        $(this).change(function(){
+            updateInfo(unit);
+        });
+    });
 }
 
 // elegir el género de Robin
@@ -72,6 +85,7 @@ function modAssetFlaw (){
     }
 
     cambiarTexto();
+    
 }
 
 
@@ -179,16 +193,17 @@ function statGrUp(gr, val, unit){
 
 //hacer las opciones de las unidades
 function showUnits(){
-
     for(var i = 0; i < allUnits.length; i++){
-        var unitName = allUnits[i].nombre;
+        var unitName = allUnits[i].n;
         $('#unitsOpciones').append($("<button id='button" + unitName +"' class='contentButton'> "+ unitName +" </button>"));
         $('#contentTabs').append($("<div id='tab" + unitName +"' class='contentTab'></div>"));
     }   
  }
+
 function showTabs(){
     for(var i = 0; i < allUnits.length; i++){
-        let unitName = allUnits[i].nombre;
+        let unitName = allUnits[i].n;
+        $("#tabRobin").focus();
         $("#button" + unitName +"").on('click', function(){
             if( $(".content-tabs div").hasClass('visible')){
                 $(".content-tabs div").removeClass('visible')
@@ -201,13 +216,15 @@ function showTabs(){
         });
     }
 }
+//hacer que la tabla de la Robin aparezca por defecto al cargar la página
+
 
 //poner las unidades en las tablas
 
 function getUnit() { 
     for(var i = 0; i < allUnits.length; i++){
         let unit = allUnits[i];
-        let unitN = unit.nombre;
+        let unitN = unit.n;
 
         var head = document.createElement("div");
         $(head).addClass("unitHeader");
@@ -238,46 +255,59 @@ function getUnit() {
 }
 
 function updateInfo(unit){
-    var v = unit.vName;
-    var cl = getCl(v)
+    var v = unit.n;
+    var cl = getCl(v);
     var statBasU = statBaseArray(unit);
     var statGrU = growthBaseArray(unit);
-    var statBasC = getModArr(cl);
+    var statBasC = getBaseArr(cl);
     var statGrC = getGrArrC(cl);
+    var assetModArray = assetMod(getAsset());
+    var flawModArray = flawMod(getFlaw());
+    var assetGrArray = assetGrowth(getAsset());
+    var flawGrArray = flawGrowth(getFlaw());
 
-    for(var i = 0; i < statArr.length; i++){ //por cada stat
+    for(var i = 0; i < statsArray.length; i++){ //por cada stat
         var j;
         if($("#" + v + "Type").val() === "base"){ //seleeciona los stat base
-            j = statBasU[i];
-        }
-        else if($("#" + v + "Type").val() === "efbase"){ //seleeciona los stat base
             j = statBasU[i] + statBasC[i];
+            if($("#RobinType").val() === "base"){ //si es Robin agrega el asset/flaw
+                j = (statBasU[i] + statBasC[i] + assetModArray[i] + flawModArray[i])
+            }
         }
         else if($("#" + v + "Type").val() === "indgrs"){ //seleeciona los gr individuales
             j = statGrU[i];
+            if($("#RobinType").val() === "indgrs"){ //si es Robin agrega el asset/flaw
+                j = (statGrU[i] + assetGrArray[i] + flawGrArray[i])
+            }
         }
         else if($("#" + v + "Type").val() === "gr"){ //seleeciona los stat base
-            j = grGrU[i] + statGrC[i];
+            j = statGrU[i] + statGrC[i];
+            if($("#RobinType").val() === "gr"){ //si es Robin agrega el asset/flaw
+                j = (statGrU[i] + statGrC[i] + assetGrArray[i] + flawGrArray[i])
+            }
         }
         $("#" + v + statsArray[i]).empty().append(j)
     }
+    cambiarTexto();
 }
 
 //tomar clase
 function getCl(v){
     var cl = $("#" + v + "Class").val();
     for(var i = 0; i < allClasses.length; i++){
-        if(allClasses[i].nombre === cl){
+        if(allClasses[i].n === cl){
             return allClasses[i];
         }
     }
+    return noClass;
 }
 function getClO(str){
     for(var i = 0; i < allClasses.length; i++){
-        if(allClasses[i].vName == str){
+        if(allClasses[i].n === str){
             return allClasses[i];
         }
     }
+    return noClass;
 }
 function getUnitO(str){
     for(var i = 0; allUnits.length; i++){
@@ -302,17 +332,63 @@ function getGenderClass(cl, unit){
         cl = "War Cleric"
     }
 }
-//clases según pj
+function classDir(unit){
+    if(unit == robin){
+        return;
+    }
+    updateInfo(unit);
+    setClase(unit);
+}
+//clases de la Robin
+function robinClasses(unit){
+    var sel = $("#" + unit.n + "Class");
+    if(unit == robin){
+        for(var i = 0; i < allRobinCl.length; i++){
+            var option = document.createElement("option");
+            $(option).val(allRobinCl[i].n).text(allRobinCl[i].n);
+            $(sel).append(option);
+        }
+    }
+}
+
+function addClOpts(clOpts, unit) {
+    var fullClOpts = [];
+    var sel = $("#" + unit.n + "Class");
+    $(sel).empty();
+    
+    for(var i = 0; i < clOpts.length; i++) {
+        if(clOpts[i] != "-") {
+            if($.inArray(getGenderClass(clOpts[i], unit), fullClOpts) == -1) {
+                fullClOpts.push(getGenderClass(clOpts[i], unit));
+            }
+            for(var j = 0; j < getClO(clOpts[i]).promotesTo.length; j++) {
+                if($.inArray(getGenderClass(getClO(clOpts[i]).promotesTo[j], unit), fullClOpts) == -1) {
+                    fullClOpts.push(getGenderClass(getClO(clOpts[i]).promotesTo[j], unit));
+                }
+            }
+        }
+    }
+    for(var i = 0; i < fullClOpts.length; i++) {
+        var opt = document.createElement("option");
+        $(opt).val(fullClOpts[i]).text(fullClOpts[i]);
+        $(sel).append(opt);
+    }
+}
+
 function setClase(unit){
-    var v = unit.vName;
+    var v = unit.n;
     var baseCl = unit.claseBase;
     var clOpt = [];
     var sel = $("#" + v + "Class");
     $(sel).empty();
-    for(var i = 0; i < baseCl.length; i++){ //por cada clase base
-        clOpt.push(baseCl[i]);
-        for(var j = 0; j < getClO(baseCl[i]).promote.length; j++){ //cada clase base promovida
-            clOpt.push(getGenderClass(getClO(baseCl[i]).promote[j], unit));
+    for(var i = 0; i < baseCl.length; i++) { 
+        if(baseCl[i] != "-") { 
+            clOpt.push(baseCl[i]);
+            for(var j = 0; j < getClO(baseCl[i]).promotesTo.length; j++) { //por cada clase básica su clase avanzada
+                if($.inArray(getClO(baseCl[i]).promotesTo[j], unit) == -1){
+                    clOpt.push(getClO(baseCl[i]).promotesTo[j])
+                }   
+            }
         }
     }
     //añadir las opiones a los select
@@ -322,5 +398,3 @@ function setClase(unit){
         $(sel).append(opt);
     }
 }
-
-
