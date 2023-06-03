@@ -62,13 +62,7 @@ body{
 }
 
 .content{
-    font-size: 13px;
-    border: 1px solid #ddd;
-    width: 500px;
-    height: 50vh;
-    margin-top: 130px;
-    position: absolute;
-    right: 40px;
+    
 }
 .opciones{
     padding: 0 40px;
@@ -103,17 +97,7 @@ button{
 }
 
 /*sidebar*/
-.sidebar{
-    position: fixed;
-    width: 250px;
-    height: 100vh;
-    border: 1px solid #ddd;
-    top: 0;
-    left: 0;
-    background: #fff;
-    font-size: 13px;
-    z-index: 99;
-}
+
 .sidebar h3{
     padding: 10px
 }
@@ -144,10 +128,7 @@ button{
 
 /*SIDEBAR*/
 .units-options button{
-    margin: 0 auto;
-    width: 100px;
-    position: relative;
-    left: 10%;
+
 }
 .nomostrar{
     display: none;

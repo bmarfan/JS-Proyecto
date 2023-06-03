@@ -22,6 +22,7 @@ function guardarStorage(){
     guardarA();
     guardarF();
     guardarJSON();
+
 }
 
 function unitsAll(){
@@ -203,7 +204,6 @@ function showUnits(){
 function showTabs(){
     for(var i = 0; i < allUnits.length; i++){
         let unitName = allUnits[i].n;
-        $("#tabRobin").focus();
         $("#button" + unitName +"").on('click', function(){
             if( $(".content-tabs div").hasClass('visible')){
                 $(".content-tabs div").removeClass('visible')
@@ -229,7 +229,7 @@ function getUnit() {
         var head = document.createElement("div");
         $(head).addClass("unitHeader");
         var ut = document.createElement("div");
-        $(ut).text(unitN);
+        $(ut).addClass("unitnombre").text(unitN);
         $("#tab" + unitN +"").append(head).append(ut);
         for(var j = 0; j < statsArray.length; j++){
             var dv = document.createElement("div");

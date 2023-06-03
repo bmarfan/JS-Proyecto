@@ -1,0 +1,305 @@
+/*Aspectos generales*/
+:root{
+    --back: #fff;
+    --back2: #f9f9f9;
+    --accent: #7b90ca;
+    --accent2: #b5b8e8;
+    --highlight: #e6dfed;
+    --border: 1px solid rgba(0,0,0,.1);
+}
+
+/*body, html*/
+html {
+    font-size: 62.5%;
+    -webkit-text-size-adjust: 62.5%;
+    line-height: 1.2;
+  }
+  
+  body, html {
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+    overscroll-behavior: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--back2);
+    font-size: 1em;
+  }
+  
+  *, :after, :before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /*Layout*/
+  .layout{
+    
+    position: relative;
+  }
+  /*Navbar*/
+  .nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: var(--border);
+    text-align: right;
+    background-color: var(--accent2);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: #fff;
+    text-shadow: rgba(0,0,0,.5) 0px 0px 1px;
+    z-index: 999;
+    height: 65px;
+  }
+  .nav h1{
+    padding: 15px;
+  }
+  .nav h1 b{
+    font-size:20px;
+  }
+  .nav span{
+    font-size: 12px;
+    display: block;
+  }
+  .nav i{
+    padding: 15px;
+    font-size: 2em;
+  }
+  
+  /*Sidebar*/
+  .sidebar{
+    width: 250px;
+    background-color: var(--back);
+    color: #333;
+    border: var(--border);
+    position: fixed;
+    height: 100vh;
+    top:65px;
+    left: 0;
+    z-index: 10;
+  }
+  .sidebar h3{
+    padding: 20px 10px 5px;
+    text-align:right;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-bottom: 1px solid var(--accent);
+    margin: 10px 25px 20px;
+    font-style: italic;
+  }
+  .units-options{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .sidebar button{
+    border: var(--border);
+    width: 100px;
+    margin:  2px 2px 0 0;
+    background-color: var(--accent);
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  /*Contenido*/
+  .container{
+    margin-left: 250px;
+  }
+  .content{
+    font-size: 13px;
+    border: var(--border);
+    width: 79vw;
+    margin-top: 84px;
+    margin-left: 19px;
+    background-color: #fff;
+    position: relative;
+  }
+  .unit-name{
+    font-weight: 700;
+    font-size: 17px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding: 20px 20px 0;
+    display: block;
+  }
+  .content{
+    display: flex;
+  }
+  .stats-name, .stat-mostrar{
+    display: flex;
+  }
+  .select-name{
+    font-weight: 700;
+    padding: 5px 0;
+    width: 100px;
+  }
+  .opciones{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+  }
+  .select{
+    border-radius: 5px;
+    border: var(--border);
+    width: 100px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    padding: 5px;
+  }
+  .button-guardar{
+    display: block;
+    margin: 10px 0;
+    width: 200px;
+    padding: 5px;
+    background: var(--highlight);
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,.7);
+    text-decoration: none;
+    font-size: 10px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  /*nombre de los stat*/
+  .stat-bs, .st{
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+    margin: 2px;
+  }
+  .stat-bs{
+    font-weight: 600;
+    background-color: var(--accent);
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+  }
+  .stat-bs:first-of-type{
+    width: 110px;
+  }
+  .nombreT{
+    width: 110px;
+    text-align: center;
+    font-weight: 700;
+    padding: 5px;
+    background-color: var(--accent);
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 2px;
+  }
+  .flex{
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  /*Cotenido de las unidades*/
+  .contentTab{
+    border: var(--border);
+    width: 40vw;
+    height: 400px;
+    margin-left: 20px;
+    display: none;
+    margin-top: 20px;
+   background-color: var(--back);
+   position: relative;
+   padding: 50px;
+}
+
+.visible{
+    display: block!important;
+}
+
+.unitnombre{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-size: 18px;
+
+}
+.unitHeader{
+    position: absolute;
+    left: 320px;
+    top: 70px;
+    color: #fff;
+}
+.statList{
+    background: var(--accent);
+    margin: 3px;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 5px;
+}
+.statShow{
+    margin: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 5px 20px 5px 30px;
+    position: relative;
+    border-bottom: 1px solid var(--accent);
+    width: fit-content;
+    margin-left: 300px;
+    top: 20px;
+    
+}
+.cl{
+    position: absolute;
+    top: 100px;
+    border-radius: 5px;
+    border: var(--border);
+    width: 200px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    padding: 5px;
+}
+.type{
+    position: absolute;
+    top: 140px;
+    border-radius: 5px;
+    border: var(--border);
+    width: 200px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    padding: 5px;
+}
+
+/*imagen*/
+.banner{
+    position: absolute;
+    right: 40px;
+    top: 161px;
+    width: 37%;
+    height: 400px;
+    overflow: hidden;
+}
+.banner img{
+    width: 100%;
+    position: relative;
+    top: -25%;
+}
+@media (max-width: 1400px){
+    .banner{
+        display: none;
+    }
+    .contentTab{
+        width: 79vw
+    }
+}

@@ -3,7 +3,7 @@ function guardarJSON(){
     var as = $("#assetSelect").val();
     var fl = $("#flawSelect").val();
     var gn = $("#genderSelect").val();
-    var nm = $("#unitName").text()
+    var nm = $("#unitName").text();
     var all = {asset: as, flaw: fl, gender: gn, nombre: nm};
     var json, storage, eleccionesObjeto;
     
@@ -14,10 +14,6 @@ function guardarJSON(){
     storage = localStorage.getItem("elecciones");
     eleccionesObjeto = JSON.parse(storage);
     
-    $("#unidadesActNombre").html(eleccionesObjeto.nombre);
-    $("#unidadesActdat").text(eleccionesObjeto.asset);
-    $("#unidadesActdat2").text(eleccionesObjeto.flaw);
-    $("#unidadesActdat3").text(eleccionesObjeto.gender);
 }
 
 //guardar assets Robin
